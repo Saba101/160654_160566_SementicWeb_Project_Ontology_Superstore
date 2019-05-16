@@ -1,0 +1,196 @@
+@prefix : <http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14> .
+
+<http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#canBuyFrom
+:canBuyFrom rdf:type owl:ObjectProperty ;
+            rdfs:domain :Customers ;
+            rdfs:range :Sections .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#maintains
+:maintains rdf:type owl:ObjectProperty ;
+           rdfs:domain :Sweepers ;
+           rdfs:range :Hygine .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#paysBillTo
+:paysBillTo rdf:type owl:ObjectProperty ;
+            rdfs:domain :Customers ;
+            rdfs:range :Cashiers .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#takenCareOf_by
+:takenCareOf_by rdf:type owl:ObjectProperty ;
+                rdfs:domain :Accounts ;
+                rdfs:range :Cashiers .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Worker_ID
+:Worker_ID rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Workers ;
+           rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#hasAddress
+:hasAddress rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Superstore ;
+            rdfs:range xsd:normalizedString .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Superstore ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#locatedin(city)
+: rdf:type owl:DatatypeProperty ;
+  rdfs:subPropertyOf :hasAddress .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Accounts
+:Accounts rdf:type owl:Class ;
+          rdfs:subClassOf :Management .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Cashiers
+:Cashiers rdf:type owl:Class ;
+          rdfs:subClassOf :Workers .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Cosmetics
+:Cosmetics rdf:type owl:Class ;
+           rdfs:subClassOf :Sections .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Crockery
+:Crockery rdf:type owl:Class ;
+          rdfs:subClassOf :Sections .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Customers
+:Customers rdf:type owl:Class ;
+           rdfs:subClassOf :Superstore .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Food
+:Food rdf:type owl:Class ;
+      rdfs:subClassOf :Sections .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Hygine
+:Hygine rdf:type owl:Class ;
+        rdfs:subClassOf :Management .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Management
+:Management rdf:type owl:Class ;
+            rdfs:subClassOf :Superstore .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Sections
+:Sections rdf:type owl:Class ;
+          rdfs:subClassOf :Superstore .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Superstore
+:Superstore rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Sweepers
+:Sweepers rdf:type owl:Class ;
+          rdfs:subClassOf :Workers .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Workers
+:Workers rdf:type owl:Class ;
+         rdfs:subClassOf :Superstore .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Account101
+:Account101 rdf:type owl:NamedIndividual ,
+                     :Accounts ;
+            :takenCareOf_by :Lionel .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Apple
+:Apple rdf:type owl:NamedIndividual ,
+                :Food .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#DinnerSet
+:DinnerSet rdf:type owl:NamedIndividual ,
+                    :Crockery .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Dusting
+:Dusting rdf:type owl:NamedIndividual ,
+                  :Hygine .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#John
+:John rdf:type owl:NamedIndividual ,
+               :Customers ;
+      :paysBillTo :Lionel .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Lionel
+:Lionel rdf:type owl:NamedIndividual ,
+                 :Cashiers .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Mopping
+:Mopping rdf:type owl:NamedIndividual ,
+                  :Hygine .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#NailPolish
+:NailPolish rdf:type owl:NamedIndividual ,
+                     :Cosmetics .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Popcorns
+:Popcorns rdf:type owl:NamedIndividual ,
+                   :Food .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#Ted
+:Ted rdf:type owl:NamedIndividual ,
+              :Sweepers ;
+     :maintains :Dusting ,
+                :Mopping ;
+     :Worker_ID 1021 .
+
+
+###  http://www.semanticweb.org/saba/ontologies/2019/4/untitled-ontology-14#superstore1
+:superstore1 rdf:type owl:NamedIndividual ,
+                      :Superstore ;
+             :hasAddress "Sector: P9, Block A, California"^^xsd:string ;
+             :hasName "GN Store"^^xsd:string ;
+             : "California"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
